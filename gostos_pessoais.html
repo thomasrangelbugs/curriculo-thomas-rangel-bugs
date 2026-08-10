@@ -15,7 +15,26 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    <!-- Estilização externa -->
     <link rel="stylesheet" href="css/portfolio.css">
+    <!-- Estilização incorporada -->
+    <style>
+        .gostos {
+            margin-bottom: 28px;
+        }
+
+        .div-gosto h2 {
+            color: #0c345e;
+        }
+
+        .div-video h2 {
+            color: #0c345e;
+        }
+
+        .div-video p {
+            margin-bottom: 18px;
+        }
+    </style>
     <script src="js/animacoes.js" defer></script>
 </head>
 <body>
@@ -32,26 +51,31 @@
     </header>
 
     <main class="conteudo-interno" id="conteudo-principal" tabindex="-1">
-        <section class="gostos">
-            <article>
+        <div class="gostos">
+            <div class="div-gosto">
                 <h2>Tecnologia e criação</h2>
                 <p>
                     Gosto de conhecer novas tecnologias, experimentar ferramentas de
                     Inteligência Artificial e transformar ideias em projetos. Também me
                     interesso por design, criação de sites e desenvolvimento de jogos.
                 </p>
-            </article>
-            <article>
+                <ul class="lista">
+                    <li>Inteligência Artificial aplicada</li>
+                    <li>Design e criação de sites</li>
+                    <li>Desenvolvimento de jogos</li>
+                </ul>
+            </div>
+            <div class="div-gosto">
                 <h2>Cultura nórdica e super-heróis</h2>
                 <p>
                     Histórias inspiradas na mitologia nórdica, especialmente as ligadas
                     ao deus Thor, estão entre meus interesses. Elas misturam aventura,
                     fantasia, coragem e perseverança.
                 </p>
-            </article>
-        </section>
+            </div>
+        </div>
 
-        <section class="video">
+        <div class="div-video video">
             <h2>Vídeo que combina com meu interesse por tecnologia</h2>
             <p>Um conteúdo sobre HTML e criação para a internet.</p>
             <div class="video-responsivo">
@@ -64,7 +88,7 @@
                     allowfullscreen>
                 </iframe>
             </div>
-        </section>
+        </div>
 
         <a class="botao-voltar" href="index.html">← Voltar à página principal</a>
     </main>

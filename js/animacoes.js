@@ -8,9 +8,10 @@ const revealGroups = [
     {
         selector:
             ".tecnologias, .secoes > .rotulo-secao, .secoes > h2, .secoes > .subtitulo, " +
-            ".card, .contato, .conteudo-interno section > h2, " +
-            ".item-lista, .tabela-responsiva, .observacao, " +
-            ".etiquetas span, .gostos article, .video, .botao-voltar, " +
+            ".card, .contato, .div-bloco > h2, " +
+            ".item-lista, .div-item, .tabela-responsiva, .observacao, .div-bloco-destaque, " +
+            ".etiquetas span, .div-etiquetas span, .gostos article, .div-gosto, " +
+            ".video, .div-video, .botao-voltar, " +
             ".pagina-erro > div",
     },
 ];

@@ -1,46 +1,40 @@
-TRABALHO U2 - CONSTRUÇÃO DE PÁGINA HTML
+TRABALHO - FORMULÁRIO DE COMENTÁRIO COM VALIDAÇÃO
 Aluno: Thomas Rangel Bugs
 
-COMO ABRIR O SITE
-1. Extraia todos os arquivos do ZIP.
-2. Abra a pasta "thomas_rangel_bugs".
-3. Clique duas vezes no arquivo "index.html".
-4. Use os links "Mais informações" para navegar entre as páginas.
+NOVAS PÁGINAS
+- comentario.html — formulário de comentário e nota
+- sucesso.html — confirmação: "Obrigado pelo comentário!"
+- js/validacao-comentario.js — validação em arquivo separado
 
-ANTES DE ENTREGAR
-- A foto pessoal já foi incluída no projeto.
-- Confirme se os níveis de inglês informados estão corretos.
-- Teste todos os links e o vídeo com a internet conectada.
-- Grave um vídeo de até 3 minutos mostrando o site.
+COMO ABRIR
+1. Extraia o ZIP.
+2. Abra index.html.
+3. Clique em "Comentar" (menu) ou "Comentar currículo".
+4. Preencha o formulário e envie para ver sucesso.html.
 
-ROTEIRO SUGERIDO PARA O VÍDEO
-0:00 a 0:20 - Apresente o objetivo do trabalho e abra o index.html.
-0:20 a 0:50 - Mostre seu nome, foto, resumo e tecnologias.
-0:50 a 1:20 - Entre na página de escolaridade e use o link de retorno.
-1:20 a 1:40 - Mostre a página de idiomas e use o link de retorno.
-1:40 a 2:10 - Mostre as experiências profissionais e os projetos.
-2:10 a 2:40 - Mostre os gostos pessoais e reproduza alguns segundos do vídeo.
-2:40 a 3:00 - Mostre a navegação em tela menor e encerre.
+CAMPOS DO FORMULÁRIO
+- Combobox: Experiências profissionais, Estudo, Idiomas, Outros
+- TextArea: comentário (mín. 50 e máx. 100 caracteres)
+- Nota: de 0 a 10, com decimais (ex.: 8.5) — apenas números e ponto
+- Botão voltar à página principal
+- Botão enviar (vai para sucesso.html se válido)
 
-ARQUIVOS PRINCIPAIS
-- index.html
-- nivel_escolaridade.html
-- idiomas.html
-- experiencias_profissionais.html
-- gostos_pessoais.html
-- 404.html
-- css/portfolio.css
-- js/menu.js
-- js/animacoes.js
-- imagens/foto_thomas.png
-- imagens/tecnologia.svg
-- imagens/favicon.svg
+VALIDAÇÕES IMPLEMENTADAS
+- Todos os campos obrigatórios
+- Comentário: 50 a 100 caracteres
+- Nota: 0 a 10 com decimais; letras/vírgula/outros caracteres = inválido
+- JavaScript embutido em comentario.html (categoria + envio)
+- JavaScript externo em js/validacao-comentario.js (comentário + nota)
+- Eventos HTML usados: onSubmit, onChange, onBlur, onClick, onInput
 
-PUBLICAÇÃO NO NETLIFY
-1. Envie este projeto para um repositório Git e conecte-o ao Netlify.
-2. O arquivo netlify.toml já configura o comando e a pasta de publicação.
-3. Para publicação manual, execute "npm run build" e arraste a pasta "dist"
-   para o Netlify Drop.
+ROTEIRO SUGERIDO PARA O VÍDEO (até 3 minutos)
+0:00 a 0:20 - Abra o currículo e mostre o link para comentario.html.
+0:20 a 0:50 - Tente enviar vazio e mostre as mensagens de erro.
+0:50 a 1:20 - Digite comentário curto (< 50) e nota inválida (letra/vírgula).
+1:20 a 1:50 - Preencha corretamente (categoria, 50–100 chars, nota 8.5).
+1:50 a 2:20 - Envie e mostre sucesso.html: "Obrigado pelo comentário!".
+2:20 a 2:50 - Use o botão de voltar à página principal.
+2:50 a 3:00 - Encerre.
 
-O vídeo MP4 da apresentação permanece no projeto original, mas não é copiado para
-"dist", pois não é usado nas páginas e arquivos grandes podem impedir o deploy.
+IDENTIFICAÇÃO DO ARQUIVO
+Thomas_Rangel_Bugs_Comentario_Curriculo.zip

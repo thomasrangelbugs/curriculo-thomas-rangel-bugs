@@ -15,7 +15,22 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    <!-- Estilização externa -->
     <link rel="stylesheet" href="css/portfolio.css">
+    <!-- Estilização incorporada -->
+    <style>
+        .div-bloco .tabela-responsiva {
+            margin-top: 8px;
+        }
+
+        .div-bloco-destaque h2 {
+            color: #0c345e;
+        }
+
+        .div-bloco-destaque p {
+            margin-bottom: 0;
+        }
+    </style>
     <script src="js/animacoes.js" defer></script>
 </head>
 <body>
@@ -32,41 +47,44 @@
     </header>
 
     <main class="conteudo-interno" id="conteudo-principal" tabindex="-1">
-        <section class="tabela-responsiva">
-            <table>
-                <caption class="sr-only">Níveis de domínio por idioma</caption>
-                <thead>
-                    <tr>
-                        <th>Idioma</th>
-                        <th>Fala</th>
-                        <th>Escrita</th>
-                        <th>Leitura</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Português</strong></td>
-                        <td>Fluente</td>
-                        <td>Fluente</td>
-                        <td>Fluente</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Inglês</strong></td>
-                        <td>Básico</td>
-                        <td>Básico</td>
-                        <td>Intermediário</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
+        <div class="div-bloco">
+            <h2>Níveis por idioma</h2>
+            <div class="tabela-responsiva">
+                <table>
+                    <caption class="sr-only">Níveis de domínio por idioma</caption>
+                    <thead>
+                        <tr>
+                            <th>Idioma</th>
+                            <th>Fala</th>
+                            <th>Escrita</th>
+                            <th>Leitura</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Português</strong></td>
+                            <td>Fluente</td>
+                            <td>Fluente</td>
+                            <td>Fluente</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Inglês</strong></td>
+                            <td>Básico</td>
+                            <td>Básico</td>
+                            <td>Intermediário</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
 
-        <aside class="observacao">
+        <div class="div-bloco-destaque observacao">
             <h2>Inglês técnico</h2>
             <p>
                 Utilizo o inglês principalmente para ler documentações, mensagens de
                 sistemas e conteúdos relacionados ao desenvolvimento de software.
             </p>
-        </aside>
+        </div>
 
         <a class="botao-voltar" href="index.html">← Voltar à página principal</a>
     </main>

@@ -13,6 +13,8 @@ Site estático multi-página com apresentação profissional, escolaridade, idio
 - `idiomas.html` — idiomas
 - `experiencias_profissionais.html` — experiências e projetos
 - `gostos_pessoais.html` — interesses pessoais
+- `comentario.html` — formulário de comentário e nota
+- `sucesso.html` — confirmação do envio
 - `404.html` — página não encontrada
 
 ## Tecnologias

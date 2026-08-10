@@ -15,7 +15,24 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    <!-- Estilização externa -->
     <link rel="stylesheet" href="css/portfolio.css">
+    <!-- Estilização incorporada -->
+    <style>
+        .div-bloco > h2 {
+            margin-bottom: 10px;
+            color: #0c345e;
+        }
+
+        .div-item h2 {
+            font-size: 1.35rem;
+            color: #12263f;
+        }
+
+        .div-item .lista {
+            margin-bottom: 0;
+        }
+    </style>
     <script src="js/animacoes.js" defer></script>
 </head>
 <body>
@@ -32,11 +49,13 @@
     </header>
 
     <main class="conteudo-interno" id="conteudo-principal" tabindex="-1">
-        <section>
-            <article class="item-lista">
+        <div class="div-bloco">
+            <h2>Experiências</h2>
+
+            <div class="div-item item-lista">
                 <p class="periodo">Agosto de 2025 - Atual</p>
-                <h2>Desenvolvedor de Sistemas com IA</h2>
-                <h3>REDOBRAI</h3>
+                <h3>Desenvolvedor de Sistemas com IA</h3>
+                <h4>REDOBRAI</h4>
                 <ul class="lista">
                     <li>Desenvolvimento de aplicações web para automação empresarial.</li>
                     <li>Criação de assistentes inteligentes e integração de APIs REST.</li>
@@ -44,32 +63,33 @@
                     <li>Desenvolvimento front-end com JavaScript, Vite e CSS.</li>
                     <li>Participação desde o levantamento de requisitos até a implantação.</li>
                 </ul>
-            </article>
+            </div>
 
-            <article class="item-lista">
+            <div class="div-item item-lista">
                 <p class="periodo">Projetos independentes</p>
-                <h2>Desenvolvedor Full Stack</h2>
-                <h3>Autônomo</h3>
+                <h3>Desenvolvedor Full Stack</h3>
+                <h4>Autônomo</h4>
                 <p>
                     Desenvolvimento de sistemas web e desktop, modelagem de banco de
                     dados, levantamento de requisitos e entrega de soluções personalizadas.
                 </p>
-            </article>
+            </div>
 
-            <article class="item-lista">
+            <div class="div-item item-lista">
                 <p class="periodo">Fevereiro de 2023 - Agosto de 2025</p>
-                <h2>Assistente Comercial / Customer Success</h2>
-                <h3>Univates</h3>
+                <h3>Assistente Comercial / Customer Success</h3>
+                <h4>Univates</h4>
                 <p>
                     Atendimento consultivo, gestão de contratos, acompanhamento de
                     indicadores, organização de eventos e relacionamento com clientes.
                 </p>
-            </article>
-        </section>
+            </div>
+        </div>
 
-        <section>
+        <div class="div-bloco">
             <h2>Projetos em destaque</h2>
-            <div class="etiquetas">
+            <p>Alguns trabalhos e ideias que marcaram minha trajetória recente:</p>
+            <div class="div-etiquetas etiquetas">
                 <span>Gerenciador de Licitações</span>
                 <span>CRM Inteligente com IA</span>
                 <span>Chatbot Corporativo</span>
@@ -78,7 +98,7 @@
                 <span>Manager Bola</span>
                 <span>Zenith Academia</span>
             </div>
-        </section>
+        </div>
 
         <a class="botao-voltar" href="index.html">← Voltar à página principal</a>
     </main>

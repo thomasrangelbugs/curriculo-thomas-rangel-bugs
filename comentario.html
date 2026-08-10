@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Envie um comentário e uma nota geral sobre o currículo de Thomas Rangel Bugs.">
+    <meta name="theme-color" content="#08182d">
+    <title>Comentário | Thomas Rangel Bugs</title>
+    <link rel="icon" href="imagens/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/portfolio.css">
+    <style>
+        .div-formulario h2 {
+            color: #0c345e;
+            margin-bottom: 8px;
+        }
+
+        .mensagem-erro {
+            display: block;
+            margin-top: 6px;
+            color: #b42318;
+            font-size: 0.88rem;
+            font-weight: 600;
+        }
+
+        .campo-invalido {
+            border-color: #f04438 !important;
+            background: #fff5f5;
+        }
+
+        .campo-valido {
+            border-color: #12b76a !important;
+        }
+    </style>
+    <!-- Validação em arquivo separado -->
+    <script src="js/validacao-comentario.js"></script>
+</head>
+<body>
+    <header class="topo-interno">
+        <nav class="menu" aria-label="Navegação secundária">
+            <a class="logo" href="index.html">TRB</a>
+            <a class="voltar" href="index.html">← Voltar à página principal</a>
+        </nav>
+        <div class="titulo-pagina">
+            <p class="destaque">Feedback</p>
+            <h1>Comentário sobre o currículo</h1>
+            <p>Selecione uma categoria, escreva seu comentário e atribua uma nota geral.</p>
+        </div>
+    </header>
+
+    <main class="conteudo-interno" id="conteudo-principal" tabindex="-1">
+        <div class="div-bloco div-formulario">
+            <h2>Formulário de avaliação</h2>
+            <p>Todos os campos são obrigatórios. O comentário deve ter entre 50 e 100 caracteres.</p>
+
+            <form id="form-comentario"
+                  class="form-comentario"
+                  action="sucesso.html"
+                  method="get"
+                  novalidate
+                  onsubmit="return enviarComentario(event)">
+
+                <div class="campo-formulario">
+                    <label for="categoria">Categoria do currículo</label>
+                    <select id="categoria"
+                            name="categoria"
+                            required
+                            onchange="aoAlterarCategoria()"
+                            onblur="validarCategoriaCampo()">
+                        <option value="">Selecione uma categoria</option>
+                        <option value="experiencias">Experiências profissionais</option>
+                        <option value="estudo">Estudo</option>
+                        <option value="idiomas">Idiomas</option>
+                        <option value="outros">Outros</option>
+                    </select>
+                    <span id="erro-categoria" class="mensagem-erro" hidden></span>
+                </div>
+
+                <div class="campo-formulario">
+                    <label for="comentario">Comentário</label>
+                    <textarea id="comentario"
+                              name="comentario"
+                              rows="5"
+                              maxlength="100"
+                              required
+                              placeholder="Escreva seu comentário sobre o item selecionado (entre 50 e 100 caracteres)."
+                              oninput="aoDigitarComentario()"
+                              onblur="validarComentarioCampo()"></textarea>
+                    <p id="contador-comentario" class="contador-comentario">0/100 caracteres (mínimo: 50)</p>
+                    <span id="erro-comentario" class="mensagem-erro" hidden></span>
+                </div>
+
+                <div class="campo-formulario">
+                    <label for="nota">Nota geral do currículo (0 a 10)</label>
+                    <input id="nota"
+                           name="nota"
+                           type="text"
+                           inputmode="decimal"
+                           required
+                           placeholder="Ex.: 8.5"
+                           onchange="validarNotaCampo()"
+                           onblur="validarNotaCampo()">
+                    <span id="erro-nota" class="mensagem-erro" hidden></span>
+                </div>
+
+                <div class="acoes-formulario">
+                    <button type="button"
+                            class="botao-secundario-form"
+                            onclick="voltarPaginaPrincipal()">
+                        Voltar à página principal
+                    </button>
+                    <button type="submit" class="botao-primario-form">
+                        Enviar comentário
+                    </button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>Currículo de Thomas Rangel Bugs • 2026</p>
+    </footer>
+
+    <!-- Validação de JavaScript embutida no arquivo -->
+    <script>
+        function obterElementos() {
+            return {
+                categoria: document.getElementById("categoria"),
+                comentario: document.getElementById("comentario"),
+                nota: document.getElementById("nota"),
+                erroCategoria: document.getElementById("erro-categoria"),
+                erroComentario: document.getElementById("erro-comentario"),
+                erroNota: document.getElementById("erro-nota"),
+                contador: document.getElementById("contador-comentario"),
+            };
+        }
+
+        function marcarCampo(campo, valido) {
+            campo.classList.remove("campo-invalido", "campo-valido");
+            campo.classList.add(valido ? "campo-valido" : "campo-invalido");
+        }
+
+        /* Validação embutida: categoria obrigatória */
+        function validarCategoriaCampo() {
+            const { categoria, erroCategoria } = obterElementos();
+            const valor = categoria.value.trim();
+            const valido = valor !== "";
+
+            erroCategoria.textContent = valido
+                ? ""
+                : "Selecione uma categoria do currículo.";
+            erroCategoria.hidden = valido;
+            marcarCampo(categoria, valido);
+
+            return valido;
+        }
+
+        /* Evento onChange da combobox */
+        function aoAlterarCategoria() {
+            validarCategoriaCampo();
+        }
+
+        /* Evento onInput do TextArea (usa funções do JS externo) */
+        function aoDigitarComentario() {
+            const { comentario, contador } = obterElementos();
+            atualizarContadorCaracteres(comentario, contador);
+        }
+
+        function validarComentarioCampo() {
+            const { comentario, erroComentario } = obterElementos();
+            const resultado = validarComentario(comentario.value);
+            exibirMensagemCampo(erroComentario, resultado);
+            marcarCampo(comentario, resultado.valido);
+            return resultado.valido;
+        }
+
+        function validarNotaCampo() {
+            const { nota, erroNota } = obterElementos();
+            const resultado = validarNota(nota.value);
+            exibirMensagemCampo(erroNota, resultado);
+            marcarCampo(nota, resultado.valido);
+            return resultado.valido;
+        }
+
+        /* Evento onClick do botão voltar */
+        function voltarPaginaPrincipal() {
+            window.location.href = "index.html";
+        }
+
+        /* Evento onSubmit do formulário */
+        function enviarComentario(event) {
+            event.preventDefault();
+
+            const { comentario, nota } = obterElementos();
+            const categoriaOk = validarCategoriaCampo();
+            const externos = validarCamposExternos(comentario.value, nota.value);
+
+            exibirMensagemCampo(
+                document.getElementById("erro-comentario"),
+                externos.comentario,
+            );
+            exibirMensagemCampo(
+                document.getElementById("erro-nota"),
+                externos.nota,
+            );
+            marcarCampo(comentario, externos.comentario.valido);
+            marcarCampo(nota, externos.nota.valido);
+
+            if (categoriaOk && externos.valido) {
+                window.location.href = "sucesso.html";
+            }
+
+            return false;
+        }
+    </script>
+</body>
+</html>

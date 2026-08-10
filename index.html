@@ -15,7 +15,27 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    <!-- Estilização externa -->
     <link rel="stylesheet" href="css/portfolio.css">
+    <!-- Estilização incorporada -->
+    <style>
+        .div-hero-texto .resumo-hero {
+            max-width: 650px;
+            color: #e5eef8;
+        }
+
+        .div-tecnologias-texto .texto-secao {
+            max-width: 620px;
+        }
+
+        .div-contato-texto p {
+            color: #cfdeed;
+        }
+
+        .secoes .subtitulo {
+            text-align: center;
+        }
+    </style>
     <script src="js/menu.js" defer></script>
     <script src="js/animacoes.js" defer></script>
     <script type="application/ld+json">
@@ -51,6 +71,7 @@
             <div class="menu-links" id="menu-principal">
                 <a href="#sobre">Sobre</a>
                 <a href="#secoes">Currículo</a>
+                <a href="comentario.html">Comentar</a>
                 <a href="#contato">Contato</a>
             </div>
         </nav>
@@ -59,7 +80,7 @@
             <img class="foto-perfil" src="imagens/foto_thomas.png" width="640" height="640"
                  fetchpriority="high" decoding="async"
                  alt="Foto de perfil de Thomas Rangel Bugs">
-            <div>
+            <div class="div-hero-texto">
                 <p class="destaque">Olá, eu sou</p>
                 <h1>Thomas Rangel Bugs</h1>
                 <h2>Desenvolvedor Full Stack</h2>
@@ -69,10 +90,9 @@
                     Engenharia de Software para criar experiências úteis e eficientes.
                 </p>
                 <p class="localizacao">Lajeado - Rio Grande do Sul</p>
-                <div class="acoes-hero">
+                <div class="div-acoes-hero acoes-hero">
                     <a class="botao-primario" href="#contato">Entre em contato</a>
-                    <a class="botao-secundario" href="https://github.com/thomasrangelbugs"
-                       target="_blank" rel="noopener noreferrer">Ver GitHub</a>
+                    <a class="botao-secundario" href="comentario.html">Comentar currículo</a>
                 </div>
             </div>
         </section>
@@ -80,7 +100,7 @@
 
     <main id="conteudo-principal" tabindex="-1">
         <section class="tecnologias">
-            <div class="tecnologias-conteudo">
+            <div class="div-tecnologias-texto tecnologias-conteudo">
                 <p class="rotulo-secao">Stack de desenvolvimento</p>
                 <h2>Ferramentas que uso para transformar ideias em produtos</h2>
                 <p class="texto-secao">
@@ -98,7 +118,7 @@
                     <li>Power BI</li>
                 </ul>
             </div>
-            <div class="ilustracao-tecnologias">
+            <div class="div-tecnologias-imagem ilustracao-tecnologias">
                 <img src="imagens/tecnologia.svg" width="700" height="420"
                      loading="lazy" decoding="async" alt="Ilustração de uma tela com código">
             </div>
@@ -109,7 +129,7 @@
             <h2>Conheça meu currículo</h2>
             <p class="subtitulo">Formação, comunicação, experiência e interesses reunidos em um só lugar.</p>
 
-            <div class="grade-cards">
+            <div class="div-grade-cards grade-cards">
                 <article class="card">
                     <span>01</span>
                     <h3>Escolaridade</h3>
@@ -141,12 +161,16 @@
         </section>
 
         <section class="contato" id="contato">
-            <div class="contato-cabecalho">
+            <div class="div-contato-texto contato-cabecalho">
                 <p class="rotulo-secao rotulo-claro">Vamos conversar</p>
                 <h2>Tem um projeto ou oportunidade em mente?</h2>
                 <p>Estou disponível para conversar sobre desenvolvimento, automação e soluções digitais.</p>
             </div>
-            <div class="contato-links">
+            <div class="div-contato-links contato-links">
+                <a href="comentario.html">
+                    <span>Avaliação</span>
+                    <strong>Comentar currículo</strong>
+                </a>
                 <a href="mailto:thomas.bugs@universo.univates.br">
                     <span>E-mail</span>
                     <strong>Enviar mensagem</strong>
