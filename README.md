@@ -35,6 +35,11 @@ npm run build
 
 A pasta `dist` fica pronta para deploy.
 
+## Requisitos
+
+- Navegador moderno para visualização direta
+- **Node.js** e **npm** — apenas se for rodar `npm run build` (Vite)
+
 ## Deploy (Netlify)
 
 1. Conecte este repositório no Netlify **ou** arraste a pasta `dist` no Netlify Drop.
