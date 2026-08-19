@@ -26,8 +26,13 @@ Site estático multi-página com apresentação profissional, escolaridade, idio
 
 ## Como rodar local
 
-1. Abra `index.html` no navegador **ou**
-2. Execute o build e sirva a pasta gerada:
+1. Instale dependências:
+
+```bash
+npm install
+```
+
+2. Abra `index.html` no navegador **ou** execute o build e sirva a pasta gerada:
 
 ```bash
 npm run build
